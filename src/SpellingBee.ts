@@ -8,13 +8,19 @@ class SpellingBee extends SpellingBeeEventHandler {
   private sb: SpellingBeeGame;
   private guess = "";
 
-  constructor(setting: SpellingBeeSetting) {
-    super();
+  public createGame(setting: SpellingBeeSetting) {
     this.sb = SpellingBeeCore.createGame(setting);
+    this.fireOnCreateGame(this.sb);
+    return this.sb;
   }
 
   public getGame() {
     return this.sb;
+  }
+
+  public loadGame(sb: SpellingBeeGame) {
+    this.sb = { ...sb };
+    this.fireOnLoadGame(this.sb);
   }
 
   public getGuess() {
@@ -44,7 +50,6 @@ class SpellingBee extends SpellingBeeEventHandler {
       this.fireOnWrongGuess(error);
     }
 
-    this.resetGuess();
     return result;
   }
 

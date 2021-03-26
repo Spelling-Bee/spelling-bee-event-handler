@@ -1,5 +1,7 @@
+type actionType = (parameters: any) => void;
+
 class EventHandler {
-  listeners: { [key: string]: Function[] } = {};
+  listeners: { [key: string]: actionType[] } = {};
   public fire(event: string, value?: any) {
     if (this.listeners[event]) {
       this.listeners[event].forEach((listener) => {
@@ -10,7 +12,7 @@ class EventHandler {
     return false;
   }
 
-  public subscribe(event: string, action: Function) {
+  public subscribe(event: string, action: actionType) {
     if (!this.listeners[event]) this.listeners[event] = [];
     this.listeners[event].push(action);
     return true;

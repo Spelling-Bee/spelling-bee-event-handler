@@ -11,13 +11,39 @@ describe("Integration Test for Spelling Bee Events", () => {
 
   const game = {
     ...setting,
-    id: "a-ab",
+    id: "2-a-ab",
     guessedWords,
     words: ["aa", "ab", "aaa", "aba"],
   };
 
+  it("fires an event when the a new game is created", () => {
+    const sb = new SpellingBee();
+
+    const mockFunction = jest.fn(() => {});
+
+    sb.onCreateGame(mockFunction);
+
+    sb.createGame(setting);
+
+    expect(mockFunction).toBeCalledTimes(1);
+  });
+
+  it("fires an event when the a new game is loaded", () => {
+    const sb = new SpellingBee();
+
+    const mockFunction = jest.fn(() => {});
+
+    sb.onLoadGame(mockFunction);
+
+    sb.loadGame(game);
+
+    expect(mockFunction).toBeCalledTimes(1);
+  });
+
   it("fires an event when the guess get updated", () => {
-    const sb = new SpellingBee(setting);
+    const sb = new SpellingBee();
+    sb.createGame(setting);
+
     const mockFunction = jest.fn(() => {});
 
     sb.onGuessChange(mockFunction);
@@ -28,7 +54,9 @@ describe("Integration Test for Spelling Bee Events", () => {
   });
 
   it("fires an event when the guess is wrong", () => {
-    const sb = new SpellingBee(setting);
+    const sb = new SpellingBee();
+    sb.createGame(setting);
+
     const mockFunction = jest.fn(() => {});
 
     sb.onWrongGuess(mockFunction);
@@ -39,7 +67,9 @@ describe("Integration Test for Spelling Bee Events", () => {
   });
 
   it("fires an event when the guess is correct", () => {
-    const sb = new SpellingBee(setting);
+    const sb = new SpellingBee();
+    sb.createGame(setting);
+
     const mockFunction = jest.fn(() => {});
 
     sb.onCorrectGuess(mockFunction);

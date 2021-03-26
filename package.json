@@ -1,8 +1,8 @@
 {
   "name": "spelling-bee-event-handler",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "src/SpellingBee.ts",
+  "main": "dist/SpellingBee.js",
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "rm -rf dist && tsc",
@@ -22,6 +22,6 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "spelling-bee-core": "0.0.5"
+    "spelling-bee-core": "0.0.10"
   }
 }

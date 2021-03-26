@@ -1,7 +1,30 @@
+import { SpellingBeeGame } from "spelling-bee-core";
 import EventHandler from "./EventHandler";
-import { CORRECT_GUESS, UPDATE_GUESS, WRONG_GUESS } from "./EVENTS";
+import {
+  CORRECT_GUESS,
+  CREATE_GAME,
+  LOAD_GAME,
+  UPDATE_GUESS,
+  WRONG_GUESS,
+} from "./EVENTS";
 
 class SpellingBeeEventHandler extends EventHandler {
+  public onCreateGame(action: (sb: SpellingBeeGame) => void) {
+    return this.subscribe(CREATE_GAME, action);
+  }
+
+  protected fireOnCreateGame(sb: SpellingBeeGame) {
+    return this.fire(CREATE_GAME, sb);
+  }
+
+  public onLoadGame(action: (sb: SpellingBeeGame) => void) {
+    return this.subscribe(LOAD_GAME, action);
+  }
+
+  protected fireOnLoadGame(sb: SpellingBeeGame) {
+    return this.fire(LOAD_GAME, sb);
+  }
+
   public onGuessChange(action: (guess: string) => void) {
     return this.subscribe(UPDATE_GUESS, action);
   }

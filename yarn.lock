@@ -4019,10 +4019,10 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.7.tgz#e9c18a410e5ed7e12442a549fbd8afa767038d65"
   integrity sha512-U+MTEOO0AiDzxwFvoa4JVnMV6mZlJKk2sBLt90s7G0Gd0Mlknc7kxEn3nuDPNZRta7O2uy8oLcZLVT+4sqNZHQ==
 
-spelling-bee-core@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/spelling-bee-core/-/spelling-bee-core-0.0.5.tgz#642f1c6fcf97fba4375c98aec005144ae0b0f378"
-  integrity sha512-PLmbKR02nuYk1ix9V2aWP4QptV+vvGSmieVaM6EpvJJKrZslUsHpwFKgWn3VQIu4sMNMORdJLRxog6qTwmLIOQ==
+spelling-bee-core@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/spelling-bee-core/-/spelling-bee-core-0.0.10.tgz#d141db2472ea9bf87c07dbd2b4368116366a26d7"
+  integrity sha512-xUrRzDIJZXohArFF7Yus/SeCCW3AWig+XIh/8nTG6jnzqYiXW3RaFGI41s7b1Cb4tcfsRXs0XDEc0MjdjRVYOg==
   dependencies:
     "@types/jest" "^25.1.4"
     fs "^0.0.1-security"
