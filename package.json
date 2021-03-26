@@ -2,7 +2,7 @@
   "name": "spelling-bee-event-handler",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/SpellingBee.ts",
   "scripts": {
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "rm -rf dist && tsc",
